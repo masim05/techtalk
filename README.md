@@ -38,9 +38,8 @@ curl                   localhost:8091 ; echo
 
 ### load balancing
 ```
-curl localhost:8092/abc ; echo
-curl localhost:8092/abc ; echo
-curl localhost:8092/abc ; echo
+for i in {1..30}; do curl -s localhost:8092/abc; echo ; done
+for i in {1..30}; do curl -s localhost:8092/abc; echo ; done | sort
 ```
 
 ### stream from server
