@@ -44,6 +44,9 @@ for i in {1..30}; do curl -s localhost:8092/abc; echo ; done | sort
 
 ### stream from server
 ```
-curl -s -v --no-buffer 'http://localhost:8093/sub/my_channel_1'; echo
-curl -s -v -X POST     'http://localhost:8093/pub?id=my_channel_1' -d 'Hello World!'
+curl -s -v --no-buffer 'http://localhost:8093/sub/my_channel_1'
+curl -s -v -X POST     'http://localhost:8093/pub?id=my_channel_1' -d 'Offer 1'
+curl -s -v -X POST     'http://localhost:8093/pub?id=my_channel_1' -d 'Offer 2'
+curl -s -v             'http://localhost:8093/pub?id=my_channel_1'
+curl -s -v             'http://localhost:8093/channels-stats'
 ```
